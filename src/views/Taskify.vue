@@ -1,20 +1,30 @@
 <script setup>
-import { ref } from 'vue';
-import { useCounterStore } from '@/stores/counter';
+import { useTaskStore } from '@/stores/taskStore';
 
-const store = useCounterStore();
+const taskStore = useTaskStore();
 
 </script>
+
 <template>
     <div>
         <h1>Taskify page</h1>
         <div class="column">
-            <div>Todo</div>
-            <div>Ongoing</div>
-            <div>Done</div>
+            <div>Todo
+                <ul>
+                    <li v-for="task in taskStore.todoArr" :key="task.order">{{ task.title }}</li>
+                </ul>
+            </div>
+            <div>Ongoing
+                <ul>
+                    <li v-for="task in taskStore.ongoingArr" :key="task.order">{{ task.title }}</li>
+                </ul>
+            </div>
+            <div>Done
+                <ul>
+                    <li v-for="task in taskStore.doneArr" :key="task.order">{{ task.title }}</li>
+                </ul>
+            </div>
         </div>
-        <div>Count is: {{ store.count }}</div>
-        <button @click="store.increment">Add to Count</button>
     </div>
 </template>
 

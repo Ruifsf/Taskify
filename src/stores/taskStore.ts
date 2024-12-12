@@ -4,6 +4,8 @@ import { defineStore } from "pinia";
 export const useTaskStore = defineStore('taskStore', () => {
     //TODO: add add'r functions.
 
+    let taskId = 6;
+
     const todoArr = ref([
         {
             "title" : "entry 1",
@@ -44,6 +46,33 @@ export const useTaskStore = defineStore('taskStore', () => {
         }
     ])
 
-    return { todoArr, ongoingArr, doneArr }
+    function createTask(taskName: string, taskType: string) {
+        let newTask = {
+            "title" : taskName,
+            "order" : taskId,
+            "fixed" : false
+        };
+
+        switch(taskType){
+            case "todo":
+                todoArr.value.push(newTask);
+                taskId++;
+                break;
+            case "ongoing": 
+                ongoingArr.value.push(newTask);
+                taskId++;
+                break;
+            case "done": 
+                doneArr.value.push(newTask);
+                taskId++;
+                break;
+            default: 
+                break;
+        }
+    }
+
+    const taskTypes = ref(["todo", "ongoing", "done"]);
+
+    return { todoArr, ongoingArr, doneArr, taskTypes, createTask }
 
 })

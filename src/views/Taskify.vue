@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue';
+import { useCounterStore } from '@/stores/counter';
+
+const store = useCounterStore();
 
 </script>
 <template>
@@ -10,6 +13,8 @@ import { ref } from 'vue';
             <div>Ongoing</div>
             <div>Done</div>
         </div>
+        <div>Count is: {{ store.count }}</div>
+        <button @click="store.increment">Add to Count</button>
     </div>
 </template>
 

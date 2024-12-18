@@ -1,6 +1,7 @@
 <script setup>
 import { useTaskStore } from '@/stores/taskStore';
 import { ref } from 'vue';
+import draggable from 'vuedraggable';
 
 const taskStore = useTaskStore();
 const newTask = ref('');
@@ -10,7 +11,6 @@ function addNewTask() {
     taskStore.createTask(newTask.value, newTaskType.value);
     newTaskType.value = "";
     newTask.value = "";
-    //TODO: change to call store task
 }
 
 </script>
@@ -32,17 +32,29 @@ function addNewTask() {
         <div class="column">
             <div>Todo
                 <ul>
-                    <li v-for="task in taskStore.todoArr" :key="task.order">{{ task.title }}</li>
+                    <draggable :list="taskStore.todoArr" tag="ul" group="people">
+                        <template #item="{ element }">
+                            <li :key="element.order">{{ element.title }}</li>
+                        </template>
+                    </draggable>
                 </ul>
             </div>
             <div>Ongoing
                 <ul>
-                    <li v-for="task in taskStore.ongoingArr" :key="task.order">{{ task.title }}</li>
+                    <draggable :list="taskStore.ongoingArr" tag="ul" group="people">
+                        <template #item="{ element }">
+                            <li :key="element.order">{{ element.title }}</li>
+                        </template>
+                    </draggable>
                 </ul>
             </div>
             <div>Done
                 <ul>
-                    <li v-for="task in taskStore.doneArr" :key="task.order">{{ task.title }}</li>
+                    <draggable :list="taskStore.doneArr" tag="ul" group="people">
+                        <template #item="{ element }">
+                            <li :key="element.order">{{ element.title }}</li>
+                        </template>
+                    </draggable>
                 </ul>
             </div>
         </div>

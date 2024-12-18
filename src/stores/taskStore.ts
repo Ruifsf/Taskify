@@ -2,8 +2,6 @@ import { ref } from "vue";
 import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore('taskStore', () => {
-    //TODO: add add'r functions.
-
     let taskId = 6;
 
     const todoArr = ref([
@@ -35,7 +33,7 @@ export const useTaskStore = defineStore('taskStore', () => {
 
     const doneArr = ref([
         {
-            "title" : "entry5",
+            "title" : "entry 5",
             "order" : 1,
             "fixed" : false
         },

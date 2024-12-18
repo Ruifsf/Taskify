@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useTaskStore } from '@/stores/taskStore';
 import { ref } from 'vue';
 import draggable from 'vuedraggable';

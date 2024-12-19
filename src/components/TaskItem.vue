@@ -7,5 +7,15 @@ defineProps({
 </script>
 
 <template>
-  <li :key="id">{{ title }}</li>
+  <li :key="id" class="single-task">{{ title }}</li>
 </template>
+
+<style>
+.single-task {
+  cursor: grab;
+}
+
+.single-task:active {
+  cursor: grabbing;
+}
+</style>

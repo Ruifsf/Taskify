@@ -15,8 +15,16 @@ function addNewTask() {
   newTask.value = "";
 }
 
+const intro = introJs();
+
 onMounted(() => {
-  introJs().start();
+  const introStarted = localStorage.getItem('ruifsf_introStarted');
+  if (!introStarted) {
+    intro.start();
+    intro.onexit(function () {
+      localStorage.setItem('ruifsf_introStarted', 'true');
+    });
+  }
 })
 
 </script>

@@ -53,7 +53,7 @@ onBeforeMount(() => {
         href='https://edurank.org/uni/university-of-lisbon/' target='_blank'>Top 80 in Europe</a>)` "></span></p>
     <p><b>Main Technologies:</b> <span class="typed" data-content="JavaScript, TypeScript, React, Vue"></span></p>
     <p><b>Hobbies:</b> <span class="typed" data-content="Climbing, Running"></span></p>
-    <p><b>LinkedIn:</b> <span class="typed" data-content="`<a href='https://linkedin.com/in/Ruifsferreira'
+    <p><b>LinkedIn:</b> <span class="typed" data-content="`<a class='link-wide' href='https://linkedin.com/in/Ruifsferreira'
         target='_blank'>linkedin.com/in/Ruifsferreira</a>`"></span></p>
     <div class="spacer"></div>
     <h2>About this Website:</h2>
@@ -78,5 +78,10 @@ onBeforeMount(() => {
   left: 0;
   z-index: -1;
   background-color: #e2c6f5;
+}
+
+.link-wide {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 </style>

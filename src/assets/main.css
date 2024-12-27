@@ -10,7 +10,7 @@
 
 a {
   text-decoration: none;
-  color: var(--color-third);
+  color: var(--color-second);
   transition: 0.4s;
   padding: 3px;
   border-radius: var(--border-xl);

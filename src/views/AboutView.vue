@@ -19,7 +19,7 @@ onMounted(() => {
     states: {
       "default-state": {
         gradients: [
-          [{ color: '#e2c6f5', pos: 0 }, { color: '#e2c6f5', pos: 0 }, { color: '#e2c6f5', pos: 0 }],
+          [{ color: '#eae8eb', pos: 0 }, { color: '#eae8eb', pos: 0 }, { color: '#eae8eb', pos: 0 }],
           [
             { color: '#e2c6f5', pos: .2 },
             { color: '#f0afaf', pos: .8 },
@@ -77,7 +77,7 @@ onBeforeMount(() => {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-color: #e2c6f5;
+  background-color: #eae8eb;
 }
 
 .link-wide {

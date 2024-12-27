@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Typed from 'typed.js';
-import { onMounted } from 'vue';
+import { onBeforeMount, onMounted } from 'vue';
+import Granim from "granim";
 
 onMounted(() => {
   document.querySelectorAll('.typed').forEach(function (el) {
@@ -10,12 +11,38 @@ onMounted(() => {
       showCursor: false,
     })
   });
+
+  var granimInstance = new Granim({
+    element: '#canvas-complex',
+    direction: 'diagonal',
+    isPausedWhenNotInView: true,
+    states: {
+      "default-state": {
+        gradients: [
+          [{ color: '#e2c6f5', pos: 0 }, { color: '#e2c6f5', pos: 0 }, { color: '#e2c6f5', pos: 0 }],
+          [
+            { color: '#e2c6f5', pos: .2 },
+            { color: '#f0afaf', pos: .8 },
+            { color: '#c7f0d6', pos: 1 }
+          ], [
+            { color: '#b9ede8', pos: 0 },
+            { color: '#f7c588', pos: .2 },
+            { color: '#f5bad8', pos: .75 }
+          ],
+        ]
+      }
+    }
+  });
 })
 
+onBeforeMount(() => {
+
+})
 
 </script>
 
 <template>
+  <canvas id="canvas-complex"></canvas>
   <div>
     <h1>Who I am:</h1>
     <p><b>Name:</b> <span class="typed" data-content="Rui Ferreira"></span></p>
@@ -38,5 +65,18 @@ onMounted(() => {
 <style>
 .spacer {
   height: 40px;
+}
+
+#canvas-complex {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #e2c6f5;
 }
 </style>

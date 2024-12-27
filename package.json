@@ -14,6 +14,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "granim": "^2.0.0",
     "intro.js": "^7.2.0",
     "pinia": "^2.2.6",
     "typed.js": "^2.1.0",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
+    "@types/granim": "^2.0.4",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.9.3",
     "@vitejs/plugin-vue": "^5.2.1",

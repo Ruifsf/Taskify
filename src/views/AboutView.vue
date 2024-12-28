@@ -12,7 +12,7 @@ onMounted(() => {
     })
   });
 
-  var granimInstance = new Granim({
+  new Granim({
     element: '#canvas-complex',
     direction: 'diagonal',
     isPausedWhenNotInView: true,
@@ -33,10 +33,6 @@ onMounted(() => {
       }
     }
   });
-})
-
-onBeforeMount(() => {
-
 })
 
 </script>
@@ -78,6 +74,7 @@ onBeforeMount(() => {
   left: 0;
   z-index: -1;
   background-color: #eae8eb;
+  opacity: 0.6;
 }
 
 .link-wide {

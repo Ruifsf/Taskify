@@ -69,7 +69,8 @@ onMounted(() => {
     <div class="column-container" data-intro='You can drag tasks between columns. Try it!' data-title='Drag'
       data-step='4'>
       <div class="column" data-intro='Your New tasks!' data-title='Columns' data-step='1'
-        data-disable-interaction="true">Todo
+        data-disable-interaction="true">
+        <h3>Todo</h3>
         <draggable :list="taskStore.todoArr" tag="ul" group="people">
           <template #item="{ element, index }">
             <TaskItem :title="element.title" :id="index"></TaskItem>
@@ -78,7 +79,7 @@ onMounted(() => {
       </div>
       <div class="column" data-intro='Your Ongoing tasks!' data-title='Columns' data-step='2'
         data-disable-interaction="true">
-        Ongoing
+        <h3>Ongoing</h3>
         <draggable :list="taskStore.ongoingArr" tag="ul" group="people">
           <template #item="{ element, index }">
             <TaskItem :title="element.title" :id="index"></TaskItem>
@@ -87,7 +88,7 @@ onMounted(() => {
       </div>
       <div class="column" data-intro='Your Done tasks!' data-title='Columns' data-step='3'
         data-disable-interaction="true">
-        Done
+        <h3>Done</h3>
         <draggable :list="taskStore.doneArr" tag="ul" group="people">
           <template #item="{ element, index }">
             <TaskItem :title="element.title" :id="index"></TaskItem>
@@ -113,6 +114,11 @@ onMounted(() => {
   border-radius: var(--border-l);
   flex: 1;
   padding: 10px;
+}
+
+.column h3 {
+  text-align: center;
+  font-weight: 500;
 }
 
 #canvas-complex {

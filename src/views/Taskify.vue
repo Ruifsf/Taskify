@@ -181,4 +181,31 @@ onMounted(() => {
 .list-name {
   margin-bottom: 5px;
 }
+
+@media(max-width:768px) {
+  .list-name {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .column-container {
+    flex-direction: column;
+  }
+}
+
+@media(max-width:470px) {
+
+  .task-input,
+  .task-select,
+  .task-button {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .task-input,
+  .task-select {
+    width: 180px;
+  }
+}
 </style>

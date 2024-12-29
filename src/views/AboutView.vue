@@ -40,21 +40,25 @@ onMounted(() => {
 <template>
   <canvas id="canvas-complex"></canvas>
   <div>
-    <h1>Who I am:</h1>
-    <p><b>Name:</b> <span class="typed" data-content="Rui Ferreira"></span></p>
-    <p><b>Age:</b> <span class="typed" data-content="29"></span></p>
-    <p><b>Country:</b> <span class="typed" data-content="Portugal"></span></p>
-    <p><b>Experience:</b> <span class="typed" data-content="4 years as Frontend Developer"></span></p>
-    <p><b>Studies:</b> <span class="typed" data-content="Masters in Computer Engineering, University of Lisbon `(<a
+    <div class="who-section">
+      <h1>Who I am:</h1>
+      <p><b>Name:</b> <span class="typed" data-content="Rui Ferreira"></span></p>
+      <p><b>Age:</b> <span class="typed" data-content="29"></span></p>
+      <p><b>Country:</b> <span class="typed" data-content="Portugal"></span></p>
+      <p><b>Experience:</b> <span class="typed" data-content="4 years as Frontend Developer"></span></p>
+      <p><b>Studies:</b> <span class="typed" data-content="Masters in Computer Engineering, University of Lisbon `(<a
         href='https://edurank.org/uni/university-of-lisbon/' target='_blank'>Top 80 in Europe</a>)` "></span></p>
-    <p><b>Main Technologies:</b> <span class="typed" data-content="JavaScript, TypeScript, React, Vue"></span></p>
-    <p><b>Hobbies:</b> <span class="typed" data-content="Climbing, Running"></span></p>
-    <p><b>LinkedIn:</b> <span class="typed" data-content="`<a class='link-wide' href='https://linkedin.com/in/Ruifsferreira'
+      <p><b>Main Technologies:</b> <span class="typed" data-content="JavaScript, TypeScript, React, Vue"></span></p>
+      <p><b>Hobbies:</b> <span class="typed" data-content="Climbing, Running"></span></p>
+      <p><b>LinkedIn:</b> <span class="typed" data-content="`<a class='link-wide' href='https://linkedin.com/in/Ruifsferreira'
         target='_blank'>linkedin.com/in/Ruifsferreira</a>`"></span></p>
-    <div class="spacer"></div>
-    <h2>About this Website:</h2>
-    <p>This is my first simple project with Vue (3).</p>
-    <p>The goal was to create a simple Task List in order to learn and practice Vue.</p>
+      <div class="spacer"></div>
+    </div>
+    <div class="about-section">
+      <h2>About this Website:</h2>
+      <p>This is my first simple project with Vue (3).</p>
+      <p>The goal was to create a simple Task List in order to learn and practice Vue.</p>
+    </div>
   </div>
 </template>
 
@@ -64,7 +68,7 @@ onMounted(() => {
 }
 
 #canvas-complex {
-  position: absolute;
+  position: fixed;
   display: block;
   width: 100%;
   height: 100%;
@@ -80,5 +84,19 @@ onMounted(() => {
 .link-wide {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+@media(max-width:835px) {
+  .who-section {
+    height: 400px;
+    display: block;
+  }
+}
+
+@media(max-width:459px) {
+  .who-section {
+    height: 500px;
+    display: block;
+  }
 }
 </style>

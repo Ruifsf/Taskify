@@ -122,7 +122,7 @@ onMounted(() => {
 }
 
 #canvas-complex {
-  position: absolute;
+  position: fixed;
   display: block;
   width: 100%;
   height: 100%;

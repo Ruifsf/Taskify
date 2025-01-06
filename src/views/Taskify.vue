@@ -71,7 +71,7 @@ onMounted(() => {
       <div class="column" data-intro='Your New tasks!' data-title='Columns' data-step='1'
         data-disable-interaction="true">
         <h3>Todo</h3>
-        <draggable :list="taskStore.todoArr" tag="ul" group="people">
+        <draggable :list="taskStore.todoArr" tag="ul" group="people" itemKey="id">
           <template #item="{ element, index }">
             <TaskItem :title="element.title" :id="index"></TaskItem>
           </template>
@@ -80,7 +80,7 @@ onMounted(() => {
       <div class="column" data-intro='Your Ongoing tasks!' data-title='Columns' data-step='2'
         data-disable-interaction="true">
         <h3>Ongoing</h3>
-        <draggable :list="taskStore.ongoingArr" tag="ul" group="people">
+        <draggable :list="taskStore.ongoingArr" tag="ul" group="people" itemKey="id">
           <template #item="{ element, index }">
             <TaskItem :title="element.title" :id="index"></TaskItem>
           </template>
@@ -89,7 +89,7 @@ onMounted(() => {
       <div class="column" data-intro='Your Done tasks!' data-title='Columns' data-step='3'
         data-disable-interaction="true">
         <h3>Done</h3>
-        <draggable :list="taskStore.doneArr" tag="ul" group="people">
+        <draggable :list="taskStore.doneArr" tag="ul" group="people" itemKey="id">
           <template #item="{ element, index }">
             <TaskItem :title="element.title" :id="index"></TaskItem>
           </template>
